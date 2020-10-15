@@ -2,9 +2,10 @@ from flask import Flask, render_template
 from config import Config
 from map.map import map
 from app.shipping_form import ShippingForm
-from config import Config
-from flask_migrate, import Migrate
-
+from flask_migrate import Migrate
+from app.models import (
+    db, Package
+)
 
 app = Flask(__name__)
 app.config.from_object(Config)
