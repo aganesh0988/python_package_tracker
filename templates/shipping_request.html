@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="workspace">
+    <form method="post" action="{{ url_for('.new_package') }}">
+        {{ sf.csrf_token }}
+        <div>Shipping Request</div>
+        <div>{{ sf.sender_name }}</div>
+        <div">{{ sf.recipient_name }}
+</div>
+<div>{{ sf.origin }}</div>
+<div>{{ sf.destination }}</div>
+<div>{{ sf.express_shipping_desired }}</div>
+<button>Submit</button>
+<button>Cancel</button>
+</form>
+</div>
+{% endblock %}
